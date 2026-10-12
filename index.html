@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="site-root" content="./">
+  <title>تيّار | Tayaar Simulator: مختبرك الكهربائي على الحاسوب</title>
+  <meta name="description" content="تيّار محاكي دوائر كهربائية لنظام Windows: صمّم التمديدات المنزلية ولوحات التحكم الصناعية وأنظمة الطاقة الشمسية وبرامج PLC، وشغّلها وتعلّم بأمان، دون إنترنت.">
+  <meta name="theme-color" content="#03070b">
+  <meta property="og:title" content="تيّار | Tayaar Simulator">
+  <meta property="og:description" content="مختبرك الكهربائي على الحاسوب: صمّم الدائرة، شغّلها، وافهمها.">
+  <meta property="og:image" content="assets/img/shot-designer-ar.webp">
+  <link rel="icon" href="favicon.ico">
+  <link rel="alternate" hreflang="en" href="en/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Manrope:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="blueprint" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="تيّار، الصفحة الرئيسية">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2 5 13.5h6l-1.5 8.5L19 10h-6.2z" fill="#ffd27a"/></svg></span>
+        <span>تيّار<small>TAYAAR SIMULATOR</small></span>
+      </a>
+      <nav class="nav" aria-label="أقسام الصفحة">
+        <a href="#features">المميزات</a>
+        <a href="#tour">جولة</a>
+        <a href="#plans">الخطط</a>
+        <a href="#download">التنزيل</a>
+        <a href="#faq">الأسئلة</a>
+      </nav>
+      <a class="lang-switch" href="en/" hreflang="en" lang="en">EN</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <span class="chip reveal"><span class="led"></span>محاكي إلكترونيات وكهرباء · Windows</span>
+          <h1 class="reveal" data-d="1">صمّم الدائرة.<br><span class="live">شغّلها.</span> <span class="cool">افهمها.</span></h1>
+          <p class="lead reveal" data-d="2">تيّار مختبرك للإلكترونيات والكهرباء على الحاسوب. ابنِ دوائر إلكترونية بالمقاومات والمكثفات والترانزستورات ومكبّرات العمليات والمؤقّت 555، وراقب الإشارات على راسم الإشارة لحظة بلحظة، ثم صمّم التمديدات المنزلية ولوحات التحكم الصناعية وأنظمة الطاقة الشمسية، كل ذلك قبل أن تلمس سلكاً حقيقياً.</p>
+          <div class="hero-cta reveal" data-d="3">
+            <a class="btn btn-primary" href="#download" data-hero-download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
+              تنزيل تيّار
+            </a>
+            <a class="btn btn-ghost" href="#plans">الخطط والاشتراكات</a>
+          </div>
+          <div class="hero-meta reveal" data-d="3">
+            <span>الإصدار <b class="mono" data-rel="version">1.4.1</b></span>
+            <span>يعمل دون إنترنت</span>
+            <span>عربي · English</span>
+          </div>
+        </div>
+
+        <div class="board reveal" data-d="2">
+          <div class="board-head"><span class="dots"><i></i><i></i><i></i></span><span>DOL_START.elab — LIVE</span></div>
+          <svg id="circuit" class="circuit" viewBox="0 0 560 430" role="img" aria-labelledby="circuit-title">
+            <title id="circuit-title">دائرة توضيحية: مصدر وقاطع ومفتاح يغذّي مصباحاً ومحركاً. اضغط المفتاح S1 لتشغيلها أو إيقافها.</title>
+            <defs>
+              <filter id="glow-amber" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="glow-blue" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="glow-teal" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <radialGradient id="lamp-g"><stop offset="0" stop-color="#fff3c4"/><stop offset=".35" stop-color="#ffc44d" stop-opacity=".85"/><stop offset="1" stop-color="#ff9a1f" stop-opacity="0"/></radialGradient>
+              <pattern id="sgrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#123049" stroke-width="1"/></pattern>
+              <clipPath id="scope-clip"><rect x="292" y="342" width="240" height="70" rx="6"/></clipPath>
+            </defs>
+            <g direction="ltr">
+            <!-- wires -->
+            <path class="c-wire l" d="M136 86 H268"/>
+            <path class="c-wire l" d="M318 86 H452"/>
+            <path class="c-wire l" d="M390 86 V204"/>
+            <path class="c-wire n" d="M474 108 V312 H60 V126"/>
+            <path class="c-wire n" d="M390 272 V312"/>
+            <!-- current flow -->
+            <path class="c-flow" d="M136 86 H268"/>
+            <path class="c-flow" d="M318 86 H452"/>
+            <path class="c-flow" d="M390 86 V204"/>
+            <path class="c-flow n" d="M474 108 V312 H60 V126"/>
+            <path class="c-flow n" d="M390 272 V312"/>
+            <!-- source G -->
+            <rect class="c-box" x="26" y="46" width="110" height="80" rx="10"/>
+            <path class="c-sym" d="M50 86 q12 -22 24 0 t24 0" stroke="#ffd27a"/>
+            <text class="c-txt" x="81" y="116" text-anchor="middle">230V ~ 50Hz</text>
+            <text class="c-tag" x="26" y="36">G</text>
+            <!-- breaker Q1 -->
+            <rect class="c-box" x="166" y="64" width="60" height="44" rx="8"/>
+            <path class="c-sym" d="M180 86 H190 L210 74 M210 86 H214 M200 80 l6 6 m0 -6 l-6 6"/>
+            <text class="c-tag" x="166" y="56">Q1</text>
+            <text class="c-txt" x="196" y="124" text-anchor="middle">C16</text>
+            <!-- switch S1 -->
+            <circle class="c-node" cx="268" cy="86" r="4.5"/>
+            <circle class="c-node" cx="318" cy="86" r="4.5"/>
+            <rect id="s1-hit" class="switch-hit" x="252" y="48" width="80" height="56" rx="10" fill="transparent" tabindex="0" role="button" aria-label="المفتاح S1: تشغيل أو إيقاف الدائرة" aria-pressed="true"/>
+            <line class="lever" x1="268" y1="86" x2="316" y2="86"/>
+            <text class="c-tag" x="276" y="40">S1</text>
+            <!-- lamp H1 -->
+            <circle class="lamp-glow" cx="474" cy="86" r="56" fill="url(#lamp-g)"/>
+            <circle class="c-box" cx="474" cy="86" r="22"/>
+            <path class="c-sym lamp-sym" d="M459 71 L489 101 M489 71 L459 101"/>
+            <text class="c-tag" x="500" y="56">H1</text>
+            <!-- motor M1 -->
+            <circle class="c-box" cx="390" cy="238" r="34"/>
+            <g class="rotor"><circle class="motor-ring c-sym" cx="390" cy="238" r="27" stroke-dasharray="6 7"/></g>
+            <text x="390" y="243" text-anchor="middle" fill="#cfe2ee" style="font:700 18px var(--font-mono)">M</text>
+            <text class="c-txt" x="390" y="258" text-anchor="middle">1~</text>
+            <text class="c-tag" x="434" y="234">M1</text>
+            <!-- junctions -->
+            <circle class="c-node" cx="390" cy="86" r="5"/>
+            <circle class="c-node" cx="390" cy="312" r="5"/>
+            <!-- status -->
+            <circle class="status-dot" cx="521" cy="30" r="5"/>
+            <text class="c-txt" x="510" y="34" text-anchor="end">RUN</text>
+            <!-- meter -->
+            <rect class="c-box" x="26" y="336" width="250" height="82" rx="10"/>
+            <text id="rd-u" class="readout" x="44" y="366">U  230.0 V</text>
+            <text id="rd-i" class="readout" x="160" y="366">I  2.46 A</text>
+            <text id="rd-p" class="readout" x="44" y="398">P  549 W</text>
+            <text id="rd-f" class="readout" x="160" y="398">f  50.0 Hz</text>
+            <!-- scope -->
+            <rect class="c-box" x="286" y="336" width="252" height="82" rx="10"/>
+            <rect x="292" y="342" width="240" height="70" rx="6" fill="url(#sgrid)"/>
+            <g clip-path="url(#scope-clip)"><path class="scope-trace" d="M292 377 q20 -44 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/></g>
+            <text class="c-txt" x="532" y="332" text-anchor="end">CH1 · 100V/div</text>
+            </g>
+          </svg>
+          <div class="board-foot">
+            <span>اضغط المفتاح <b class="mono">S1</b> أو الزر</span>
+            <button id="circuit-toggle" class="toggle" type="button" aria-pressed="true"><span class="knob"></span>POWER</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>230 V / 400 V · 50 Hz</span><span>MCB · RCD · CONTACTOR · THERMAL RELAY</span><span>DOL · FORWARD / REVERSE · SEQUENTIAL START</span><span>PV · GRID-TIED · OFF-GRID · HYBRID</span><span>PLC LADDER · TON · TOF · CTU</span><span>IEC 60364-5-52 · VOLTAGE DROP</span><span>IEC 61439-1 · DIVERSITY FACTOR</span><span>PANEL SCHEDULE · PHASE BALANCING</span>
+          <span>230 V / 400 V · 50 Hz</span><span>MCB · RCD · CONTACTOR · THERMAL RELAY</span><span>DOL · FORWARD / REVERSE · SEQUENTIAL START</span><span>PV · GRID-TIED · OFF-GRID · HYBRID</span><span>PLC LADDER · TON · TOF · CTU</span><span>IEC 60364-5-52 · VOLTAGE DROP</span><span>IEC 61439-1 · DIVERSITY FACTOR</span><span>PANEL SCHEDULE · PHASE BALANCING</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-label">01 · المميزات</span>
+          <h2>كل ما تحتاجه لتفهم الكهرباء، في لوحة واحدة.</h2>
+          <p>من مصباح ومفتاح إلى لوحة تحكم صناعية وبرنامج PLC، يُحاكي تيّار الدائرة كما تعمل في الواقع.</p>
+        </div>
+
+        <div class="bento">
+          <article class="cell span-2 reveal">
+            <div class="art"><svg viewBox="0 0 200 150" aria-hidden="true">
+              <path class="m-stroke" d="M10 75 H40 l6 -12 l10 24 l10 -24 l10 24 l10 -24 l6 12 H120"/>
+              <path class="m-stroke" d="M120 60 V90 M130 60 V90"/>
+              <path class="m-stroke" d="M130 75 H150"/>
+              <path d="M150 62 L172 75 L150 88 Z M172 62 V88" fill="#3a1414" stroke="#ff5d6c" stroke-width="2"/>
+              <circle cx="161" cy="75" r="16" fill="#ff5d6c" opacity=".35" class="m-blink" filter="url(#glow-amber)"/>
+              <path class="m-live m-teal" d="M10 75 H40"/>
+              <path class="m-stroke" d="M172 75 H192 V120 H10"/>
+            </svg></div>
+            <div class="kicker">ELECTRONICS</div>
+            <h3>مكتبة الإلكترونيات</h3>
+            <p>مقاومات ومكثفات وثنائيات وترانزستورات ودوائر متكاملة، تُحاكى زمنياً بحلّال تناظري.</p>
+          </article>
+
+          <article class="cell reveal" data-d="1">
+            <div class="art"><svg viewBox="0 0 200 150" aria-hidden="true">
+              <path class="m-live" d="M30 10 V50 M50 10 V50 M70 10 V50"/>
+              <rect x="20" y="50" width="60" height="42" rx="7" fill="#0c1824" stroke="#355571" stroke-width="1.6"/>
+              <text x="50" y="76" text-anchor="middle" fill="#9fc1d8" style="font:700 12px var(--font-mono)">KM1</text>
+              <path class="m-live" d="M50 92 V120 H105"/>
+              <circle cx="140" cy="110" r="32" fill="#0c1824" stroke="#355571" stroke-width="1.6"/>
+              <circle class="m-spin" cx="140" cy="110" r="24" fill="none" stroke="#2ee6c5" stroke-width="2.4" stroke-dasharray="7 6"/>
+              <text x="140" y="116" text-anchor="middle" fill="#e7f1f6" style="font:700 16px var(--font-mono)">M</text>
+            </svg></div>
+            <div class="kicker">INDUSTRIAL</div>
+            <h3>لوحات التحكم الصناعية</h3>
+            <p>كونتاكتورات ومرحّلات حرارية ومؤقتات: تشغيل مباشر، وعكس اتجاه، وتشغيل متتابع.</p>
+          </article>
+
+          <article class="cell reveal">
+            <div class="art"><svg viewBox="0 0 200 150" aria-hidden="true">
+              <g class="m-spin-slow"><circle cx="40" cy="36" r="14" fill="#ffb02e" filter="url(#glow-amber)"/>
+              <path d="M40 10v-6M40 68v-6M14 36h-6M72 36h-6M22 18l-4-4M62 58l-4-4M22 54l-4 4M62 14l-4 4" stroke="#ffd27a" stroke-width="2.4" stroke-linecap="round"/></g>
+              <path d="M78 70 L150 70 L170 112 L98 112 Z" fill="#0f2a44" stroke="#3ea6ff" stroke-width="1.6"/>
+              <path d="M102 70 L122 112 M126 70 L146 112 M88 91 H160" stroke="#3ea6ff" stroke-width="1" opacity=".7"/>
+              <path class="m-live" d="M134 112 V134 H168"/>
+              <rect x="168" y="120" width="26" height="28" rx="4" fill="#0c1824" stroke="#4ade80" stroke-width="1.6"/>
+              <rect x="173" y="128" width="16" height="15" rx="2" fill="#4ade80" opacity=".75" class="m-glow"/>
+            </svg></div>
+            <div class="kicker">SOLAR</div>
+            <h3>الطاقة الشمسية</h3>
+            <p>ألواح وبطاريات وإنفرترات: أنظمة متصلة بالشبكة، ومستقلة، وهجينة، مع شدة إشعاع تتغيّر أثناء المحاكاة.</p>
+          </article>
+
+          <article class="cell span-2 reveal" data-d="1">
+            <div class="art"><svg viewBox="0 0 420 150" aria-hidden="true">
+              <path d="M20 20 V140 M400 20 V140" stroke="#9fc1d8" stroke-width="3"/>
+              <path class="m-stroke" d="M20 55 H110 M130 55 H200 M220 55 H340 M370 55 H400"/>
+              <path class="m-stroke" d="M110 40 V70 M130 40 V70 M200 40 V70 M220 40 V70"/>
+              <path class="m-stroke" d="M340 40 q-12 15 0 30 M370 40 q12 15 0 30"/>
+              <path class="m-live m-teal m-rung" d="M20 55 H400"/>
+              <text x="120" y="32" text-anchor="middle" fill="#2ee6c5" style="font:700 12px var(--font-mono)">I1</text>
+              <text x="210" y="32" text-anchor="middle" fill="#2ee6c5" style="font:700 12px var(--font-mono)">I2</text>
+              <text x="355" y="32" text-anchor="middle" fill="#ffd27a" style="font:700 12px var(--font-mono)">Q1</text>
+              <path class="m-stroke" d="M20 112 H110 M130 112 H300"/><path class="m-stroke" d="M110 98 V126 M130 98 V126"/>
+              <rect x="300" y="96" width="70" height="32" rx="4" fill="#0c1824" stroke="#9fc1d8" stroke-width="2"/>
+              <text x="335" y="117" text-anchor="middle" fill="#e7f1f6" style="font:700 12px var(--font-mono)">TON 5s</text>
+              <path class="m-stroke" d="M370 112 H400"/>
+            </svg></div>
+            <div class="kicker">PLC · LADDER</div>
+            <h3>محرر PLC بالسلم</h3>
+            <p>اكتب برنامج Ladder بتلامسات وملفات ومؤقتات وعدّادات، واربطه بالدائرة الكهربائية وشاهده يعمل خطوة بخطوة.</p>
+          </article>
+
+          <article class="cell reveal">
+            <div class="art"><svg viewBox="0 0 320 150" aria-hidden="true">
+              <path class="m-stroke" d="M30 140 V70 L120 18 L210 70 V140"/>
+              <circle cx="120" cy="86" r="34" fill="url(#lamp-g)" class="m-glow"/>
+              <circle cx="120" cy="86" r="11" fill="#0c1824" stroke="#ffd27a" stroke-width="2.4"/>
+              <path d="M113 79 l14 14 m0 -14 l-14 14" stroke="#ffd27a" stroke-width="2.2"/>
+              <rect x="246" y="56" width="54" height="84" rx="8" fill="#0c1824" stroke="#355571" stroke-width="1.6"/>
+              <rect x="256" y="68" width="10" height="20" rx="2" fill="#2ee6c5" opacity=".8"/><rect x="272" y="68" width="10" height="20" rx="2" fill="#2ee6c5" opacity=".5"/><rect x="256" y="96" width="26" height="18" rx="3" fill="#3ea6ff" opacity=".55"/>
+              <path class="m-live" d="M246 100 H170 V86 H131"/>
+              <path class="m-live m-blue" d="M109 86 H70 V128 H246"/>
+            </svg></div>
+            <div class="kicker">RESIDENTIAL</div>
+            <h3>التمديدات المنزلية</h3>
+            <p>مصابيح ومفاتيح ودرج وقواطع وRCD ولوحة توزيع منزلية، وشاهد القاطع يفصل عند التسريب أو الحمل الزائد.</p>
+          </article>
+
+          <article class="cell reveal" data-d="1">
+            <div class="art"><svg viewBox="0 0 200 150" aria-hidden="true">
+              <rect x="30" y="22" width="140" height="28" rx="7" fill="#0c1824" stroke="#1f3850"/><path class="m-check" d="M42 36 l6 6 l12 -12" stroke="#2ee6c5" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="72" y="32" width="80" height="8" rx="4" fill="#1f3850"/>
+              <rect x="30" y="60" width="140" height="28" rx="7" fill="#0c1824" stroke="#1f3850"/><path class="m-check c2" d="M42 74 l6 6 l12 -12" stroke="#2ee6c5" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="72" y="70" width="64" height="8" rx="4" fill="#1f3850"/>
+              <rect x="30" y="98" width="140" height="28" rx="7" fill="#0c1824" stroke="#1f3850"/><path class="m-check c3" d="M42 112 l6 6 l12 -12" stroke="#2ee6c5" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="72" y="108" width="72" height="8" rx="4" fill="#1f3850"/>
+            </svg></div>
+            <div class="kicker">LESSONS</div>
+            <h3>دروس يتحقق منها المحرّك</h3>
+            <p>ابدأ من دائرة ناقصة، وأكمل المهام، ثم اضغط «افحص دائرتي»، فيشغّل المحاكي دائرتك ويخبرك بما نجح وما فشل ولماذا.</p>
+          </article>
+
+          <article class="cell reveal" data-d="2">
+            <div class="art"><svg viewBox="0 0 200 150" aria-hidden="true">
+              <path d="M40 120 A60 60 0 0 1 160 120" fill="none" stroke="#1f3850" stroke-width="12" stroke-linecap="round"/>
+              <path d="M40 120 A60 60 0 0 1 132 70" fill="none" stroke="#2ee6c5" stroke-width="12" stroke-linecap="round" opacity=".85" filter="url(#glow-teal)"/>
+              <path d="M140 74 A60 60 0 0 1 160 120" fill="none" stroke="#ff5d6c" stroke-width="12" stroke-linecap="round" opacity=".8"/>
+              <line class="m-needle" x1="100" y1="120" x2="100" y2="70" stroke="#ffd27a" stroke-width="3.2" stroke-linecap="round"/>
+              <circle cx="100" cy="120" r="7" fill="#ffd27a"/>
+              <text x="100" y="146" text-anchor="middle" fill="#8ea4b2" style="font:600 11px var(--font-mono)">ΔU ≤ 3%</text>
+            </svg></div>
+            <div class="kicker">CALCULATORS</div>
+            <h3>حاسبات التمديدات</h3>
+            <p>الحمل الكلي، ومقطع الكابل والقاطع، وهبوط الجهد، وجدول اللوحة مع موازنة الأطوار، مع تصدير PDF وCSV.</p>
+          </article>
+
+          <article class="cell span-3 ai reveal">
+            <div class="ai-text">
+              <div class="kicker">AI ASSISTANT</div>
+              <h3>المساعد الذكي <span class="badge-soon">قريباً</span></h3>
+              <p>مساعد يشرح دائرتك، ويحسب مقطع الكابل وهبوط الجهد، ويشغّل المحاكاة على نسخة من مشروعك ليجيب عن أسئلتك. يأتي مع خطة Pro + AI.</p>
+            </div>
+            <div class="ai-orb" aria-hidden="true"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOUR -->
+    <section id="tour" class="section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-label">02 · جولة داخل التطبيق</span>
+          <h2>واجهة صُمّمت للمهندس والطالب معاً.</h2>
+          <p>لقطات حقيقية من تيّار.</p>
+        </div>
+        <div class="showcase">
+          <div class="tabs" role="tablist" aria-label="لقطات التطبيق">
+            <button class="tab" role="tab" data-title="المصمم · تشغيل محرك مباشر" data-caption="المحاكاة تعمل: التيار يظهر على كل سلك."><span class="ix">01</span><strong>المصمم</strong><small>دائرة تشغيل محرك والتيار يسري</small></button>
+            <button class="tab" role="tab" data-title="PLC · مؤقت تأخير" data-caption="محرر Ladder متصل بالدائرة."><span class="ix">02</span><strong>محرر PLC</strong><small>سلالم ومؤقتات ومخارج حيّة</small></button>
+            <button class="tab" role="tab" data-title="تحويل المصدر · ATS" data-caption="مفتاح تحويل بين مصدرين."><span class="ix">03</span><strong>تحويل المصدر</strong><small>مصدران ومفتاح تحويل آلي</small></button>
+            <button class="tab" role="tab" data-title="الحاسبات · الحمل الكلي" data-caption="حاسبات مبنية على جداول مرجعية قابلة للتعديل."><span class="ix">04</span><strong>الحاسبات</strong><small>الحمل والكابل وهبوط الجهد</small></button>
+            <button class="tab" role="tab" data-title="تعلّم · الدروس والأمثلة" data-caption="أمثلة جاهزة ودروس بمهام يتحقق منها المحاكي."><span class="ix">05</span><strong>الدروس</strong><small>أمثلة ومهام وتحقق آلي</small></button>
+          </div>
+          <div class="screen reveal" data-d="1">
+            <div class="screen-bar"><i></i><i></i><i></i><span id="shot-title">المصمم</span></div>
+            <figure>
+              <img src="assets/img/shot-designer-ar.webp" alt="المصمم في تيّار أثناء محاكاة دائرة تشغيل محرك" class="active" width="1440" height="880">
+              <img src="assets/img/shot-plc.webp" alt="محرر PLC بالسلم في تيّار" loading="lazy" width="1440" height="880">
+              <img src="assets/img/shot-transfer.webp" alt="دائرة مفتاح تحويل المصدر في تيّار" loading="lazy" width="1440" height="880">
+              <img src="assets/img/shot-calc.webp" alt="حاسبة الحمل الكلي في تيّار" loading="lazy" width="1440" height="880">
+              <img src="assets/img/shot-learn-ar.webp" alt="شاشة الدروس والأمثلة في تيّار" loading="lazy" width="1440" height="880">
+              <figcaption id="shot-caption"></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANS -->
+    <section id="plans" class="section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-label">03 · الخطط</span>
+          <h2>اختر الخطة المناسبة لك <span class="badge-soon">قريباً</span></h2>
+          <p>الاشتراكات قيد الإعداد وستُعلن الأسعار قريباً. اشتراك شهري أو سنوي.</p>
+        </div>
+        <div class="billing reveal" role="group" aria-label="مدة الاشتراك">
+          <button type="button" data-billing="monthly" aria-pressed="true">شهري</button>
+          <button type="button" data-billing="yearly" aria-pressed="false">سنوي</button>
+        </div>
+        <div id="plan-cards" class="plans" aria-live="polite">
+          <article class="plan"><h3>مجاني</h3><p class="tag">للتعرّف على تيّار</p><div class="price"><span class="amount">مجاناً</span></div><ul><li class="on"><span>بعض الدروس والمكونات</span></li><li class="off"><span>حفظ المشاريع</span></li></ul></article>
+          <article class="plan"><h3>Pro</h3><p class="tag">كل أدوات المحاكاة</p><div class="price"><span class="soon">قريباً</span></div><ul><li class="on"><span>كل الميزات ما عدا المساعد الذكي</span></li></ul></article>
+          <article class="plan featured"><h3>Pro + AI</h3><p class="tag">كل شيء، مع المساعد الذكي</p><div class="price"><span class="soon">قريباً</span></div><ul><li class="on"><span>كل ميزات Pro والمساعد الذكي</span></li></ul></article>
+        </div>
+        <p class="plans-note reveal">الأسعار بالجنيه السوداني، والدفع عبر التطبيقات المصرفية السودانية عند إطلاق الاشتراكات.</p>
+      </div>
+    </section>
+
+    <!-- HOW TO SUBSCRIBE -->
+    <section id="subscribe" class="section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-label">04 · طريقة الاشتراك</span>
+          <h2>أربع خطوات، بلا بطاقة ائتمان.</h2>
+          <p>هكذا سيعمل الاشتراك عند إطلاقه.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><div class="node">1</div><h4>ثبّت تيّار</h4><p>نزّل التطبيق وانسخ رمز جهازك من داخله.</p></div>
+          <div class="step reveal" data-d="1"><div class="node">2</div><h4>حوّل المبلغ</h4><p>عبر تطبيقك المصرفي السوداني.</p></div>
+          <div class="step reveal" data-d="2"><div class="node">3</div><h4>أرسل الطلب</h4><p>إشعار التحويل ورقم العملية ورمز الجهاز عبر واتساب.</p></div>
+          <div class="step reveal" data-d="3"><div class="node">4</div><h4>فعّل اشتراكك</h4><p>تصلك رسالة كود التفعيل، فتلصقه في التطبيق.</p></div>
+        </div>
+        <div class="cta-strip reveal">
+          <div><h3>لديك سؤال عن الاشتراكات أو المعاهد؟</h3><p>راسلنا على واتساب: <bdi class="mono" dir="ltr">+249 91 098 1837</bdi></p></div>
+          <a class="btn btn-wa" data-wa href="https://wa.me/249910981837?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%D8%A7%D8%AA%20%D8%AA%D9%8A%D9%91%D8%A7%D8%B1." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+            تواصل عبر واتساب
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section id="download" class="section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-label">05 · التنزيل</span>
+          <h2>نزّل تيّار لنظام Windows.</h2>
+          <p>ملف تثبيت واحد، لا يحتاج Java ولا صلاحيات مدير.</p>
+        </div>
+        <div class="dl">
+          <div class="card dl-main reveal">
+            <div class="dl-title">
+              <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2 5 13.5h6l-1.5 8.5L19 10h-6.2z" fill="#ffd27a"/></svg></span>
+              <div><h3>Tayaar Simulator <span data-rel="version">1.4.1</span></h3><p data-rel="file">TayaarSimulator-1.4.1.msi</p></div>
+            </div>
+            <div class="specs">
+              <div class="spec"><span>النظام</span><b data-rel="platform">Windows · 64-bit</b></div>
+              <div class="spec"><span>الحجم</span><b data-rel="size">59.9 ميجابايت</b></div>
+              <div class="spec"><span>تاريخ الإصدار</span><b data-rel="date">2026-10-10</b></div>
+            </div>
+            <div class="dl-buttons">
+              <a id="dl-github" class="btn btn-ghost" aria-disabled="true" tabindex="-1">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5Z"/></svg>
+                <span class="lbl">GitHub · قريباً</span>
+              </a>
+              <a id="dl-drive" class="btn btn-ghost" aria-disabled="true" tabindex="-1">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 3h7l6 10.5-3.5 6H6l-3.5-6z"/><path d="M8.5 3 15 14.5M15.5 3 9 14.5M2.5 13.5h19"/></svg>
+                <span class="lbl">Google Drive · قريباً</span>
+              </a>
+            </div>
+            <p class="dl-state"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><span id="dl-state-text">رابط التنزيل غير متاح بعد. سيُفعَّل بعد اكتمال اختبار المثبّت ومراجعة التراخيص.</span></p>
+            <div class="hash">
+              <div class="hash-top"><span>بصمة SHA-256</span><button class="copy" type="button" data-copy="#sha">نسخ</button></div>
+              <code id="sha" data-rel="sha256">20EBBF254222B3EC4B9E7B96B1072C422C3CF268E7D8FC577414531373791640</code>
+            </div>
+            <pre class="code">Get-FileHash .\TayaarSimulator-1.4.1.msi -Algorithm SHA256</pre>
+          </div>
+
+          <div class="reveal" data-d="1">
+            <div class="card">
+              <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6z"/><path d="M12 8v5M12 16v.5"/></svg></span>تحذير Windows SmartScreen</h4>
+              <ul class="list">
+                <li><b class="n">1</b><span>المثبّت غير موقّع رقمياً بعد، فقد يظهر «Windows protected your PC».</span></li>
+                <li><b class="n">2</b><span>تحقق أولاً أن بصمة الملف تطابق البصمة المنشورة هنا.</span></li>
+                <li><b class="n">3</b><span>اضغط <b>More info</b> ثم <b>Run anyway</b>.</span></li>
+              </ul>
+            </div>
+            <div class="card">
+              <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>المتطلبات</h4>
+              <ul class="list">
+                <li><b class="n">·</b><span>Windows بنظام 64-bit (x64).</span></li>
+                <li><b class="n">·</b><span>حوالي 125 ميجابايت مساحة فارغة.</span></li>
+                <li><b class="n">·</b><span>لا يحتاج Java، ولا صلاحيات مدير، ولا إنترنت.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-label">06 · أسئلة شائعة</span>
+          <h2>أسئلة يطرحها الجميع.</h2>
+        </div>
+        <div class="faq">
+          <details class="reveal"><summary>هل يعمل تيّار دون إنترنت؟</summary><p>نعم. المحاكاة والحاسبات والدروس تعمل كلها على جهازك دون اتصال.</p></details>
+          <details class="reveal" data-d="1"><summary>هل يغني تيّار عن الكهربائي المؤهل؟</summary><p>لا. تيّار أداة للتعليم والتخطيط المبدئي، ونتائجه مبسّطة. التنفيذ الفعلي يتطلب كهربائياً مؤهلاً والالتزام بالكود الكهربائي المحلي.</p></details>
+          <details class="reveal"><summary>لماذا يظهر تحذير من Windows عند التثبيت؟</summary><p>لأن المثبّت غير موقّع رقمياً بعد. تحقق من بصمة SHA-256 ثم اختر More info ثم Run anyway.</p></details>
+          <details class="reveal" data-d="1"><summary>ما الفرق بين الخطط؟</summary><p>المجانية تتيح بعض الدروس والمكونات دون حفظ المشاريع. Pro تفتح كل أدوات المحاكاة. Pro + AI تضيف المساعد الذكي.</p></details>
+          <details class="reveal"><summary>متى تتوفر الاشتراكات؟</summary><p>قريباً. ستُعلن الأسعار وطريقة الدفع هنا، ويمكنك مراسلتنا على واتساب لتسجيل اهتمامك.</p></details>
+          <details class="reveal" data-d="1"><summary>هل بياناتي تبقى عند التحديث؟</summary><p>نعم. الإصدار الجديد يحلّ محل القديم، وتبقى مشاريعك وإعداداتك وتقدّمك في الدروس كما هي.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="notice-band reveal">
+          <div>
+            <h3>التراخيص والمكونات الخارجية</h3>
+            <p>يتضمن تيّار مكونات مفتوحة المصدر لها تراخيصها الخاصة. إشعارات التراخيص الكاملة وروابط الشيفرة المصدرية المطلوبة قيد الإعداد، وستُنشر قبل إتاحة التنزيل.</p>
+          </div>
+          <a class="btn btn-ghost" href="licenses.html">صفحة التراخيص</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>
+        <a class="brand" href="#top"><span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2 5 13.5h6l-1.5 8.5L19 10h-6.2z" fill="#ffd27a"/></svg></span><span>تيّار<small>TAYAAR SIMULATOR</small></span></a>
+        <p>مختبرك الكهربائي على الحاسوب.</p>
+        <p class="warn">أداة للتعليم والتخطيط المبدئي. التنفيذ الفعلي يتطلب كهربائياً مؤهلاً والكود المحلي.</p>
+      </div>
+      <div>
+        <h5>الموقع</h5>
+        <a href="#features">المميزات</a><a href="#plans">الخطط</a><a href="#download">التنزيل</a><a href="licenses.html">التراخيص</a>
+      </div>
+      <div>
+        <h5>تواصل</h5>
+        <a data-wa href="https://wa.me/249910981837" target="_blank" rel="noopener">واتساب: <bdi dir="ltr">+249 91 098 1837</bdi></a>
+        <a href="en/" hreflang="en" lang="en">English</a>
+      </div>
+      <div class="legal"><span>© <span data-year>2026</span> Tayaar Simulator · تيّار</span><span class="mono">v<span data-rel="version">1.4.1</span></span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js" defer></script>
+</body>
+</html>

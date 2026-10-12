@@ -1,0 +1,45 @@
+{
+  "status": "soon",
+  "currency": { "ar": "ج.س", "en": "SDG" },
+  "whatsapp": "249910981837",
+  "plans": [
+    {
+      "id": "free",
+      "name": { "ar": "مجاني", "en": "Free" },
+      "tagline": { "ar": "للتعرّف على تيّار", "en": "Get to know Tayaar" },
+      "price": { "monthly": 0, "yearly": 0 },
+      "features": [
+        { "ar": "بعض الدروس التفاعلية", "en": "Selected interactive lessons", "on": true },
+        { "ar": "مكونات أساسية للمحاكاة", "en": "Basic simulation components", "on": true },
+        { "ar": "تشغيل المحاكاة", "en": "Run the simulation", "on": true },
+        { "ar": "حفظ المشاريع", "en": "Save projects", "on": false },
+        { "ar": "كل المكونات والدروس", "en": "All components and lessons", "on": false },
+        { "ar": "المساعد الذكي", "en": "AI assistant", "on": false }
+      ]
+    },
+    {
+      "id": "pro",
+      "name": { "ar": "Pro", "en": "Pro" },
+      "tagline": { "ar": "كل أدوات المحاكاة", "en": "Every simulation tool" },
+      "price": { "monthly": null, "yearly": null },
+      "features": [
+        { "ar": "كل المكونات: منزلي، صناعي، شمسي، إلكترونيات", "en": "All components: residential, industrial, solar, electronics", "on": true },
+        { "ar": "كل الدروس والأمثلة", "en": "All lessons and examples", "on": true },
+        { "ar": "حفظ المشاريع بلا حدود", "en": "Unlimited project saving", "on": true },
+        { "ar": "محرر PLC والحاسبات والتصدير", "en": "PLC editor, calculators and export", "on": true },
+        { "ar": "المساعد الذكي", "en": "AI assistant", "on": false }
+      ]
+    },
+    {
+      "id": "pro-ai",
+      "name": { "ar": "Pro + AI", "en": "Pro + AI" },
+      "tagline": { "ar": "كل شيء، مع المساعد الذكي", "en": "Everything, plus the AI assistant" },
+      "featured": true,
+      "price": { "monthly": null, "yearly": null },
+      "features": [
+        { "ar": "كل ميزات Pro", "en": "Everything in Pro", "on": true },
+        { "ar": "المساعد الذكي: يشرح دائرتك ويحسب ويحاكي", "en": "AI assistant: explains, calculates and simulates your circuit", "on": true }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "product": "Tayaar Simulator",
+  "version": "1.4.1",
+  "date": "2026-10-10",
+  "file": "TayaarSimulator-1.4.1.msi",
+  "sizeBytes": 62857452,
+  "sha256": "20EBBF254222B3EC4B9E7B96B1072C422C3CF268E7D8FC577414531373791640",
+  "platform": "Windows · 64-bit (x64)",
+  "downloadEnabled": false,
+  "downloads": {
+    "github": "",
+    "googleDrive": ""
+  },
+  "sourceCode": {
+    "enabled": false,
+    "github": "",
+    "googleDrive": ""
+  },
+  "licensesFinal": false
+}

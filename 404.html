@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الصفحة غير موجودة | تيّار</title>
+  <meta name="robots" content="noindex">
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 24px;
+      background: #03070b linear-gradient(rgba(64,196,255,.06) 1px, transparent 1px) 0 0 / 24px 24px; color: #e7f1f6;
+      font-family: "Segoe UI", Tahoma, sans-serif; }
+    .tag { font: 600 12px Consolas, monospace; color: #2ee6c5; letter-spacing: 2px; }
+    h1 { font-size: clamp(32px, 6vw, 54px); margin: 14px 0 8px; }
+    p { color: #8ea4b2; }
+    a { display: inline-block; margin: 18px 6px 0; padding: 12px 20px; border-radius: 12px; font-weight: 700; text-decoration: none; }
+    .p { background: #2ee6c5; color: #022019; } .g { border: 1px solid #1f3850; color: #e7f1f6; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="tag">ERROR 404 · OPEN CIRCUIT</div>
+    <h1>الدائرة مفتوحة هنا.</h1>
+    <p>لم نجد هذه الصفحة · Page not found</p>
+    <a class="p" id="home" href="/">الرئيسية</a><a class="g" id="en" href="/en/">English</a>
+  </main>
+  <script>
+    /* GitHub Pages project sites live under /<repo>/; user sites and custom domains live at /. */
+    (function () {
+      var base = "/";
+      // the repository is named "tayaar", so the site lives at https://<user>.github.io/tayaar/
+      if (/\.github\.io$/.test(location.hostname) && location.pathname.split("/")[1] === "tayaar") base = "/tayaar/";
+      document.getElementById("home").href = base;
+      document.getElementById("en").href = base + "en/";
+    })();
+  </script>
+</body>
+</html>

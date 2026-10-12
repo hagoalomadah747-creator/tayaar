@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="site-root" content="../">
+  <title>Tayaar Simulator | Your electrical lab on the computer</title>
+  <meta name="description" content="Tayaar is an electrical circuit simulator for Windows: design house wiring, industrial control panels, solar systems and PLC programs, run them and learn safely, offline.">
+  <meta name="theme-color" content="#03070b">
+  <meta property="og:title" content="Tayaar Simulator">
+  <meta property="og:description" content="Your electrical lab on the computer: design the circuit, run it, understand it.">
+  <meta property="og:image" content="../assets/img/shot-transfer.webp">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="alternate" hreflang="ar" href="../">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Manrope:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <div class="blueprint" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Tayaar, home">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2 5 13.5h6l-1.5 8.5L19 10h-6.2z" fill="#ffd27a"/></svg></span>
+        <span>Tayaar<small>SIMULATOR</small></span>
+      </a>
+      <nav class="nav" aria-label="Page sections">
+        <a href="#features">Features</a>
+        <a href="#tour">Tour</a>
+        <a href="#plans">Plans</a>
+        <a href="#download">Download</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="lang-switch" href="../" hreflang="ar" lang="ar">عربي</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <span class="chip reveal"><span class="led"></span>ELECTRONICS &amp; ELECTRICAL SIMULATOR · WINDOWS</span>
+          <h1 class="reveal" data-d="1">Design the circuit.<br><span class="live">Power it.</span> <span class="cool">Understand it.</span></h1>
+          <p class="lead reveal" data-d="2">Tayaar is your electronics and electrical lab on the computer. Build electronic circuits with resistors, capacitors, transistors, op-amps and the 555 timer, watch the signals on the oscilloscope in real time, then design house wiring, industrial control panels and solar systems, all before you touch a real wire.</p>
+          <div class="hero-cta reveal" data-d="3">
+            <a class="btn btn-primary" href="#download" data-hero-download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
+              Download Tayaar
+            </a>
+            <a class="btn btn-ghost" href="#plans">Plans &amp; subscriptions</a>
+          </div>
+          <div class="hero-meta reveal" data-d="3">
+            <span>Version <b class="mono" data-rel="version">1.4.1</b></span>
+            <span>Works offline</span>
+            <span>English · عربي</span>
+          </div>
+        </div>
+
+        <div class="board reveal" data-d="2">
+          <div class="board-head"><span class="dots"><i></i><i></i><i></i></span><span>DOL_START.elab — LIVE</span></div>
+          <svg id="circuit" class="circuit" viewBox="0 0 560 430" role="img" aria-labelledby="circuit-title">
+            <title id="circuit-title">Demo circuit: a source, breaker and switch feeding a lamp and a motor. Press switch S1 to turn it on or off.</title>
+            <defs>
+              <filter id="glow-amber" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="glow-blue" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="glow-teal" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <radialGradient id="lamp-g"><stop offset="0" stop-color="#fff3c4"/><stop offset=".35" stop-color="#ffc44d" stop-opacity=".85"/><stop offset="1" stop-color="#ff9a1f" stop-opacity="0"/></radialGradient>
+              <pattern id="sgrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#123049" stroke-width="1"/></pattern>
+              <clipPath id="scope-clip"><rect x="292" y="342" width="240" height="70" rx="6"/></clipPath>
+            </defs>
+            <g direction="ltr">
+            <path class="c-wire l" d="M136 86 H268"/>
+            <path class="c-wire l" d="M318 86 H452"/>
+            <path class="c-wire l" d="M390 86 V204"/>
+            <path class="c-wire n" d="M474 108 V312 H60 V126"/>
+            <path class="c-wire n" d="M390 272 V312"/>
+            <path class="c-flow" d="M136 86 H268"/>
+            <path class="c-flow" d="M318 86 H452"/>
+            <path class="c-flow" d="M390 86 V204"/>
+            <path class="c-flow n" d="M474 108 V312 H60 V126"/>
+            <path class="c-flow n" d="M390 272 V312"/>
+            <rect class="c-box" x="26" y="46" width="110" height="80" rx="10"/>
+            <path class="c-sym" d="M50 86 q12 -22 24 0 t24 0" stroke="#ffd27a"/>
+            <text class="c-txt" x="81" y="116" text-anchor="middle">230V ~ 50Hz</text>
+            <text class="c-tag" x="26" y="36">G</text>
+            <rect class="c-box" x="166" y="64" width="60" height="44" rx="8"/>
+            <path class="c-sym" d="M180 86 H190 L210 74 M210 86 H214 M200 80 l6 6 m0 -6 l-6 6"/>
+            <text class="c-tag" x="166" y="56">Q1</text>
+            <text class="c-txt" x="196" y="124" text-anchor="middle">C16</text>
+            <circle class="c-node" cx="268" cy="86" r="4.5"/>
+            <circle class="c-node" cx="318" cy="86" r="4.5"/>
+            <rect id="s1-hit" class="switch-hit" x="252" y="48" width="80" height="56" rx="10" fill="transparent" tabindex="0" role="button" aria-label="Switch S1: turn the circuit on or off" aria-pressed="true"/>
+            <line class="lever" x1="268" y1="86" x2="316" y2="86"/>
+            <text class="c-tag" x="276" y="40">S1</text>
+            <circle class="lamp-glow" cx="474" cy="86" r="56" fill="url(#lamp-g)"/>
+            <circle class="c-box" cx="474" cy="86" r="22"/>
+            <path class="c-sym lamp-sym" d="M459 71 L489 101 M489 71 L459 101"/>
+            <text class="c-tag" x="500" y="56">H1</text>
+            <circle class="c-box" cx="390" cy="238" r="34"/>
+            <g class="rotor"><circle class="motor-ring c-sym" cx="390" cy="238" r="27" stroke-dasharray="6 7"/></g>
+            <text x="390" y="243" text-anchor="middle" fill="#cfe2ee" style="font:700 18px var(--font-mono)">M</text>
+            <text class="c-txt" x="390" y="258" text-anchor="middle">1~</text>
+            <text class="c-tag" x="434" y="234">M1</text>
+            <circle class="c-node" cx="390" cy="86" r="5"/>
+            <circle class="c-node" cx="390" cy="312" r="5"/>
+            <circle class="status-dot" cx="521" cy="30" r="5"/>
+            <text class="c-txt" x="510" y="34" text-anchor="end">RUN</text>
+            <rect class="c-box" x="26" y="336" width="250" height="82" rx="10"/>
+            <text id="rd-u" class="readout" x="44" y="366">U  230.0 V</text>
+            <text id="rd-i" class="readout" x="160" y="366">I  2.46 A</text>
+            <text id="rd-p" class="readout" x="44" y="398">P  549 W</text>
+            <text id="rd-f" class="readout" x="160" y="398">f  50.0 Hz</text>
+            <rect class="c-box" x="286" y="336" width="252" height="82" rx="10"/>
+            <rect x="292" y="342" width="240" height="70" rx="6" fill="url(#sgrid)"/>
+            <g clip-path="url(#scope-clip)"><path class="scope-trace" d="M292 377 q20 -44 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/></g>
+            <text class="c-txt" x="532" y="332" text-anchor="end">CH1 · 100V/div</text>
+            </g>
+          </svg>
+          <div class="board-foot">
+            <span>Press switch <b class="mono">S1</b> or the button</span>
+            <button id="circuit-toggle" class="toggle" type="button" aria-pressed="true"><span class="knob"></span>POWER</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>230 V / 400 V · 50 Hz</span><span>MCB · RCD · CONTACTOR · THERMAL RELAY</span><span>DOL · FORWARD / REVERSE · SEQUENTIAL START</span><span>PV · GRID-TIED · OFF-GRID · HYBRID</span><span>PLC LADDER · TON · TOF · CTU</span><span>IEC 60364-5-52 · VOLTAGE DROP</span><span>IEC 61439-1 · DIVERSITY FACTOR</span><span>PANEL SCHEDULE · PHASE BALANCING</span>
+          <span>230 V / 400 V · 50 Hz</span><span>MCB · RCD · CONTACTOR · THERMAL RELAY</span><span>DOL · FORWARD / REVERSE · SEQUENTIAL START</span><span>PV · GRID-TIED · OFF-GRID · HYBRID</span><span>PLC LADDER · TON · TOF · CTU</span><span>IEC 60364-5-52 · VOLTAGE DROP</span><span>IEC 61439-1 · DIVERSITY FACTOR</span><span>PANEL SCHEDULE · PHASE BALANCING</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-label">01 · Features</span>
+          <h2>Everything you need to understand electricity, on one board.</h2>
+          <p>From a lamp and a switch to an industrial control panel and a PLC program, Tayaar simulates the circuit the way it works in reality.</p>
+        </div>
+
+        <div class="bento">
+          <article class="cell span-2 reveal">
+            <div class="art"><svg viewBox="0 0 200 150" aria-hidden="true">
+              <path class="m-stroke" d="M10 75 H40 l6 -12 l10 24 l10 -24 l10 24 l10 -24 l6 12 H120"/>
+              <path class="m-stroke" d="M120 60 V90 M130 60 V90"/>
+              <path class="m-stroke" d="M130 75 H150"/>
+              <path d="M150 62 L172 75 L150 88 Z M172 62 V88" fill="#3a1414" stroke="#ff5d6c" stroke-width="2"/>
+              <circle cx="161" cy="75" r="16" fill="#ff5d6c" opacity=".35" class="m-blink" filter="url(#glow-amber)"/>
+              <path class="m-live m-teal" d="M10 75 H40"/>
+              <path class="m-stroke" d="M172 75 H192 V120 H10"/>
+            </svg></div>
+            <div class="kicker">ELECTRONICS</div>
+            <h3>Electronics library</h3>
+            <p>Resistors, capacitors, diodes, transistors and ICs, simulated over time by an analog solver.</p>
+          </article>
+
+          <article class="cell reveal" data-d="1">
+            <div class="art"><svg viewBox="0 0 200 150" aria-hidden="true">
+              <path class="m-live" d="M30 10 V50 M50 10 V50 M70 10 V50"/>
+              <rect x="20" y="50" width="60" height="42" rx="7" fill="#0c1824" stroke="#355571" stroke-width="1.6"/>
+              <text x="50" y="76" text-anchor="middle" fill="#9fc1d8" style="font:700 12px var(--font-mono)">KM1</text>
+              <path class="m-live" d="M50 92 V120 H105"/>
+              <circle cx="140" cy="110" r="32" fill="#0c1824" stroke="#355571" stroke-width="1.6"/>
+              <circle class="m-spin" cx="140" cy="110" r="24" fill="none" stroke="#2ee6c5" stroke-width="2.4" stroke-dasharray="7 6"/>
+              <text x="140" y="116" text-anchor="middle" fill="#e7f1f6" style="font:700 16px var(--font-mono)">M</text>
+            </svg></div>
+            <div class="kicker">INDUSTRIAL</div>
+            <h3>Industrial control panels</h3>
+            <p>Contactors, thermal relays and timers: direct-on-line, forward/reverse and sequential start.</p>
+          </article>
+
+          <article class="cell reveal">
+            <div class="art"><svg viewBox="0 0 200 150" aria-hidden="true">
+              <g class="m-spin-slow"><circle cx="40" cy="36" r="14" fill="#ffb02e" filter="url(#glow-amber)"/>
+              <path d="M40 10v-6M40 68v-6M14 36h-6M72 36h-6M22 18l-4-4M62 58l-4-4M22 54l-4 4M62 14l-4 4" stroke="#ffd27a" stroke-width="2.4" stroke-linecap="round"/></g>
+              <path d="M78 70 L150 70 L170 112 L98 112 Z" fill="#0f2a44" stroke="#3ea6ff" stroke-width="1.6"/>
+              <path d="M102 70 L122 112 M126 70 L146 112 M88 91 H160" stroke="#3ea6ff" stroke-width="1" opacity=".7"/>
+              <path class="m-live" d="M134 112 V134 H168"/>
+              <rect x="168" y="120" width="26" height="28" rx="4" fill="#0c1824" stroke="#4ade80" stroke-width="1.6"/>
+              <rect x="173" y="128" width="16" height="15" rx="2" fill="#4ade80" opacity=".75" class="m-glow"/>
+            </svg></div>
+            <div class="kicker">SOLAR</div>
+            <h3>Solar power</h3>
+            <p>PV arrays, batteries and inverters: grid-tied, off-grid and hybrid systems, with irradiance you can change while the simulation runs.</p>
+          </article>
+
+          <article class="cell span-2 reveal" data-d="1">
+            <div class="art"><svg viewBox="0 0 420 150" aria-hidden="true">
+              <path d="M20 20 V140 M400 20 V140" stroke="#9fc1d8" stroke-width="3"/>
+              <path class="m-stroke" d="M20 55 H110 M130 55 H200 M220 55 H340 M370 55 H400"/>
+              <path class="m-stroke" d="M110 40 V70 M130 40 V70 M200 40 V70 M220 40 V70"/>
+              <path class="m-stroke" d="M340 40 q-12 15 0 30 M370 40 q12 15 0 30"/>
+              <path class="m-live m-teal m-rung" d="M20 55 H400"/>
+              <text x="120" y="32" text-anchor="middle" fill="#2ee6c5" style="font:700 12px var(--font-mono)">I1</text>
+              <text x="210" y="32" text-anchor="middle" fill="#2ee6c5" style="font:700 12px var(--font-mono)">I2</text>
+              <text x="355" y="32" text-anchor="middle" fill="#ffd27a" style="font:700 12px var(--font-mono)">Q1</text>
+              <path class="m-stroke" d="M20 112 H110 M130 112 H300"/><path class="m-stroke" d="M110 98 V126 M130 98 V126"/>
+              <rect x="300" y="96" width="70" height="32" rx="4" fill="#0c1824" stroke="#9fc1d8" stroke-width="2"/>
+              <text x="335" y="117" text-anchor="middle" fill="#e7f1f6" style="font:700 12px var(--font-mono)">TON 5s</text>
+              <path class="m-stroke" d="M370 112 H400"/>
+            </svg></div>
+            <div class="kicker">PLC · LADDER</div>
+            <h3>PLC ladder editor</h3>
+            <p>Write ladder logic with contacts, coils, timers and counters, link it to the electrical circuit and watch it run step by step.</p>
+          </article>
+
+          <article class="cell reveal">
+            <div class="art"><svg viewBox="0 0 320 150" aria-hidden="true">
+              <path class="m-stroke" d="M30 140 V70 L120 18 L210 70 V140"/>
+              <circle cx="120" cy="86" r="34" fill="url(#lamp-g)" class="m-glow"/>
+              <circle cx="120" cy="86" r="11" fill="#0c1824" stroke="#ffd27a" stroke-width="2.4"/>
+              <path d="M113 79 l14 14 m0 -14 l-14 14" stroke="#ffd27a" stroke-width="2.2"/>
+              <rect x="246" y="56" width="54" height="84" rx="8" fill="#0c1824" stroke="#355571" stroke-width="1.6"/>
+              <rect x="256" y="68" width="10" height="20" rx="2" fill="#2ee6c5" opacity=".8"/><rect x="272" y="68" width="10" height="20" rx="2" fill="#2ee6c5" opacity=".5"/><rect x="256" y="96" width="26" height="18" rx="3" fill="#3ea6ff" opacity=".55"/>
+              <path class="m-live" d="M246 100 H170 V86 H131"/>
+              <path class="m-live m-blue" d="M109 86 H70 V128 H246"/>
+            </svg></div>
+            <div class="kicker">RESIDENTIAL</div>
+            <h3>House wiring</h3>
+            <p>Lamps, switches, two-way staircase lighting, breakers, RCDs and a house board. Watch the breaker trip on leakage or overload.</p>
+          </article>
+
+          <article class="cell reveal" data-d="1">
+            <div class="art"><svg viewBox="0 0 200 150" aria-hidden="true">
+              <rect x="30" y="22" width="140" height="28" rx="7" fill="#0c1824" stroke="#1f3850"/><path class="m-check" d="M42 36 l6 6 l12 -12" stroke="#2ee6c5" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="72" y="32" width="80" height="8" rx="4" fill="#1f3850"/>
+              <rect x="30" y="60" width="140" height="28" rx="7" fill="#0c1824" stroke="#1f3850"/><path class="m-check c2" d="M42 74 l6 6 l12 -12" stroke="#2ee6c5" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="72" y="70" width="64" height="8" rx="4" fill="#1f3850"/>
+              <rect x="30" y="98" width="140" height="28" rx="7" fill="#0c1824" stroke="#1f3850"/><path class="m-check c3" d="M42 112 l6 6 l12 -12" stroke="#2ee6c5" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="72" y="108" width="72" height="8" rx="4" fill="#1f3850"/>
+            </svg></div>
+            <div class="kicker">LESSONS</div>
+            <h3>Lessons the engine checks</h3>
+            <p>Start from an incomplete circuit, finish the tasks, then press “Check my circuit”: the simulator runs it and tells you what passed, what failed and why.</p>
+          </article>
+
+          <article class="cell reveal" data-d="2">
+            <div class="art"><svg viewBox="0 0 200 150" aria-hidden="true">
+              <path d="M40 120 A60 60 0 0 1 160 120" fill="none" stroke="#1f3850" stroke-width="12" stroke-linecap="round"/>
+              <path d="M40 120 A60 60 0 0 1 132 70" fill="none" stroke="#2ee6c5" stroke-width="12" stroke-linecap="round" opacity=".85" filter="url(#glow-teal)"/>
+              <path d="M140 74 A60 60 0 0 1 160 120" fill="none" stroke="#ff5d6c" stroke-width="12" stroke-linecap="round" opacity=".8"/>
+              <line class="m-needle" x1="100" y1="120" x2="100" y2="70" stroke="#ffd27a" stroke-width="3.2" stroke-linecap="round"/>
+              <circle cx="100" cy="120" r="7" fill="#ffd27a"/>
+              <text x="100" y="146" text-anchor="middle" fill="#8ea4b2" style="font:600 11px var(--font-mono)">ΔU ≤ 3%</text>
+            </svg></div>
+            <div class="kicker">CALCULATORS</div>
+            <h3>Wiring calculators</h3>
+            <p>Total load, cable size and breaker, voltage drop, and a panel schedule with phase balancing, exported to PDF and CSV.</p>
+          </article>
+
+          <article class="cell span-3 ai reveal">
+            <div class="ai-text">
+              <div class="kicker">AI ASSISTANT</div>
+              <h3>AI assistant <span class="badge-soon">Coming soon</span></h3>
+              <p>An assistant that explains your circuit, sizes cables, checks voltage drop and runs the simulation on a copy of your project to answer your questions. Included in the Pro + AI plan.</p>
+            </div>
+            <div class="ai-orb" aria-hidden="true"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tour" class="section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-label">02 · Inside the app</span>
+          <h2>Built for engineers and students alike.</h2>
+          <p>Real screenshots from Tayaar.</p>
+        </div>
+        <div class="showcase">
+          <div class="tabs" role="tablist" aria-label="App screenshots">
+            <button class="tab" role="tab" data-title="Designer · transfer switch" data-caption="Simulation running: live current on every wire."><span class="ix">01</span><strong>Designer</strong><small>Live simulation with values on every wire</small></button>
+            <button class="tab" role="tab" data-title="PLC · on-delay timer" data-caption="Ladder editor linked to the circuit."><span class="ix">02</span><strong>PLC editor</strong><small>Rungs, timers and live outputs</small></button>
+            <button class="tab" role="tab" data-title="Forward / reverse starter" data-caption="A motor reversing circuit with interlocked contactors."><span class="ix">03</span><strong>Motor control</strong><small>Forward / reverse with interlocks</small></button>
+            <button class="tab" role="tab" data-title="Calculators · total load" data-caption="Calculators built on editable reference tables."><span class="ix">04</span><strong>Calculators</strong><small>Load, cable and voltage drop</small></button>
+            <button class="tab" role="tab" data-title="Arabic interface" data-caption="The whole app is available in Arabic and English."><span class="ix">05</span><strong>Arabic interface</strong><small>Full right-to-left Arabic UI</small></button>
+          </div>
+          <div class="screen reveal" data-d="1">
+            <div class="screen-bar"><i></i><i></i><i></i><span id="shot-title">Designer</span></div>
+            <figure>
+              <img src="../assets/img/shot-transfer.webp" alt="Tayaar designer simulating a transfer switch circuit" class="active" width="1440" height="880">
+              <img src="../assets/img/shot-plc.webp" alt="Tayaar PLC ladder editor" loading="lazy" width="1440" height="880">
+              <img src="../assets/img/shot-reversing.webp" alt="Forward and reverse motor starter circuit in Tayaar" loading="lazy" width="1100" height="900">
+              <img src="../assets/img/shot-calc.webp" alt="Tayaar total load calculator" loading="lazy" width="1440" height="880">
+              <img src="../assets/img/shot-designer-ar.webp" alt="Tayaar designer in Arabic running a motor starter" loading="lazy" width="1440" height="880">
+              <figcaption id="shot-caption"></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="plans" class="section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-label">03 · Plans</span>
+          <h2>Pick the plan that fits you <span class="badge-soon">Coming soon</span></h2>
+          <p>Subscriptions are being prepared and prices will be announced soon. Monthly or yearly billing.</p>
+        </div>
+        <div class="billing reveal" role="group" aria-label="Billing period">
+          <button type="button" data-billing="monthly" aria-pressed="true">Monthly</button>
+          <button type="button" data-billing="yearly" aria-pressed="false">Yearly</button>
+        </div>
+        <div id="plan-cards" class="plans" aria-live="polite">
+          <article class="plan"><h3>Free</h3><p class="tag">Get to know Tayaar</p><div class="price"><span class="amount">Free</span></div><ul><li class="on"><span>Selected lessons and components</span></li><li class="off"><span>Save projects</span></li></ul></article>
+          <article class="plan"><h3>Pro</h3><p class="tag">Every simulation tool</p><div class="price"><span class="soon">Coming soon</span></div><ul><li class="on"><span>Everything except the AI assistant</span></li></ul></article>
+          <article class="plan featured"><h3>Pro + AI</h3><p class="tag">Everything, plus the AI assistant</p><div class="price"><span class="soon">Coming soon</span></div><ul><li class="on"><span>Everything in Pro plus the AI assistant</span></li></ul></article>
+        </div>
+        <p class="plans-note reveal">Prices in Sudanese pounds. Payment through Sudanese banking apps when subscriptions launch.</p>
+      </div>
+    </section>
+
+    <section id="subscribe" class="section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-label">04 · How to subscribe</span>
+          <h2>Four steps. No credit card.</h2>
+          <p>This is how subscribing will work at launch.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><div class="node">1</div><h4>Install Tayaar</h4><p>Download the app and copy your device code from inside it.</p></div>
+          <div class="step reveal" data-d="1"><div class="node">2</div><h4>Transfer the amount</h4><p>Through your Sudanese banking app.</p></div>
+          <div class="step reveal" data-d="2"><div class="node">3</div><h4>Send the request</h4><p>The transfer receipt, transaction number and device code via WhatsApp.</p></div>
+          <div class="step reveal" data-d="3"><div class="node">4</div><h4>Activate</h4><p>You receive an activation code to paste into the app.</p></div>
+        </div>
+        <div class="cta-strip reveal">
+          <div><h3>Questions about subscriptions or institute licences?</h3><p>Message us on WhatsApp: <span class="mono">+249 91 098 1837</span></p></div>
+          <a class="btn btn-wa" data-wa href="https://wa.me/249910981837?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20Tayaar%20subscriptions." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-label">05 · Download</span>
+          <h2>Get Tayaar for Windows.</h2>
+          <p>One installer. No Java and no administrator rights needed.</p>
+        </div>
+        <div class="dl">
+          <div class="card dl-main reveal">
+            <div class="dl-title">
+              <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2 5 13.5h6l-1.5 8.5L19 10h-6.2z" fill="#ffd27a"/></svg></span>
+              <div><h3>Tayaar Simulator <span data-rel="version">1.4.1</span></h3><p data-rel="file">TayaarSimulator-1.4.1.msi</p></div>
+            </div>
+            <div class="specs">
+              <div class="spec"><span>System</span><b data-rel="platform">Windows · 64-bit</b></div>
+              <div class="spec"><span>Size</span><b data-rel="size">59.9 MB</b></div>
+              <div class="spec"><span>Released</span><b data-rel="date">2026-10-10</b></div>
+            </div>
+            <div class="dl-buttons">
+              <a id="dl-github" class="btn btn-ghost" aria-disabled="true" tabindex="-1">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5Z"/></svg>
+                <span class="lbl">GitHub · soon</span>
+              </a>
+              <a id="dl-drive" class="btn btn-ghost" aria-disabled="true" tabindex="-1">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 3h7l6 10.5-3.5 6H6l-3.5-6z"/><path d="M8.5 3 15 14.5M15.5 3 9 14.5M2.5 13.5h19"/></svg>
+                <span class="lbl">Google Drive · soon</span>
+              </a>
+            </div>
+            <p class="dl-state"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><span id="dl-state-text">The download link is not available yet. It will be enabled after installer testing and the licensing review are complete.</span></p>
+            <div class="hash">
+              <div class="hash-top"><span>SHA-256</span><button class="copy" type="button" data-copy="#sha">Copy</button></div>
+              <code id="sha" data-rel="sha256">20EBBF254222B3EC4B9E7B96B1072C422C3CF268E7D8FC577414531373791640</code>
+            </div>
+            <pre class="code">Get-FileHash .\TayaarSimulator-1.4.1.msi -Algorithm SHA256</pre>
+          </div>
+
+          <div class="reveal" data-d="1">
+            <div class="card">
+              <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6z"/><path d="M12 8v5M12 16v.5"/></svg></span>Windows SmartScreen warning</h4>
+              <ul class="list">
+                <li><b class="n">1</b><span>The installer is not code-signed yet, so “Windows protected your PC” may appear.</span></li>
+                <li><b class="n">2</b><span>First check that the file hash matches the one published here.</span></li>
+                <li><b class="n">3</b><span>Click <b>More info</b>, then <b>Run anyway</b>.</span></li>
+              </ul>
+            </div>
+            <div class="card">
+              <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>Requirements</h4>
+              <ul class="list">
+                <li><b class="n">·</b><span>64-bit Windows (x64).</span></li>
+                <li><b class="n">·</b><span>About 125 MB of free disk space.</span></li>
+                <li><b class="n">·</b><span>No Java, no administrator rights, no internet needed.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-label">06 · FAQ</span>
+          <h2>Questions everyone asks.</h2>
+        </div>
+        <div class="faq">
+          <details class="reveal"><summary>Does Tayaar work offline?</summary><p>Yes. The simulation, calculators and lessons all run on your computer without a connection.</p></details>
+          <details class="reveal" data-d="1"><summary>Does Tayaar replace a qualified electrician?</summary><p>No. Tayaar is a teaching and preliminary-planning tool and its results are simplified. Real installations require a qualified electrician and compliance with the local electrical code.</p></details>
+          <details class="reveal"><summary>Why does Windows warn me during installation?</summary><p>Because the installer is not code-signed yet. Check the SHA-256 hash, then choose More info and Run anyway.</p></details>
+          <details class="reveal" data-d="1"><summary>What is the difference between the plans?</summary><p>Free gives you some lessons and components, without saving projects. Pro unlocks every simulation tool. Pro + AI adds the AI assistant.</p></details>
+          <details class="reveal"><summary>When will subscriptions be available?</summary><p>Soon. Prices and payment details will be announced here; message us on WhatsApp to register your interest.</p></details>
+          <details class="reveal" data-d="1"><summary>Is my data kept when I update?</summary><p>Yes. A new version replaces the old one, and your projects, settings and lesson progress stay as they are.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="notice-band reveal">
+          <div>
+            <h3>Licences and third-party components</h3>
+            <p>Tayaar includes open-source components with their own licences. The full licence notices and any required source-code links are being prepared and will be published before downloads are enabled.</p>
+          </div>
+          <a class="btn btn-ghost" href="licenses.html">Licences page</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>
+        <a class="brand" href="#top"><span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2 5 13.5h6l-1.5 8.5L19 10h-6.2z" fill="#ffd27a"/></svg></span><span>Tayaar<small>SIMULATOR</small></span></a>
+        <p>Your electrical lab on the computer.</p>
+        <p class="warn">A teaching and preliminary-planning tool. Real installations require a qualified electrician and the local code.</p>
+      </div>
+      <div>
+        <h5>Site</h5>
+        <a href="#features">Features</a><a href="#plans">Plans</a><a href="#download">Download</a><a href="licenses.html">Licences</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a data-wa href="https://wa.me/249910981837" target="_blank" rel="noopener">WhatsApp: +249 91 098 1837</a>
+        <a href="../" hreflang="ar" lang="ar">العربية</a>
+      </div>
+      <div class="legal"><span>© <span data-year>2026</span> Tayaar Simulator · تيّار</span><span class="mono">v<span data-rel="version">1.4.1</span></span></div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/site.js" defer></script>
+</body>
+</html>
